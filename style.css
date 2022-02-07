@@ -1,10 +1,26 @@
-/* Global Styles */
+/*---------------------------------*\
+    $CONTENTS
+\*---------------------------------*/
+/**
+ * CONTENTS................I'm here!
+ * RESET...................The css reset defaults.
+ * FONT-FACE...............Import font files.
+ * GLOBAL-SETTINGS.........Set global variables and settings.
+ * HEADER..................Style main header, include logo and navigation bar.
+ */
+
+/*---------------------------------*\
+    $RESET
+\*---------------------------------*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/*---------------------------------*\
+    $FONT-FACE
+\*---------------------------------*/
 @font-face {
     font-family: "Ruhl";
     src: url("./fonts/FrankRuhlLibre-Regular.ttf");
@@ -20,6 +36,9 @@
     src: url("./fonts/GreatVibes-Regular.ttf");
 }
 
+/*---------------------------------*\
+    $GLOBAL-SETTINGS
+\*---------------------------------*/
 html {
     font-size: 62.5%;
     --header1: calc(2rem + 1vw);
@@ -59,7 +78,8 @@ li,
 button,
 label,
 input,
-p {
+p,
+a {
     font-size: var(--text);
 }
 
@@ -68,6 +88,7 @@ ul {
 }
 
 a {
+    color: #000000;
     text-decoration: none;
 }
 
