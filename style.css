@@ -11,9 +11,11 @@
  * ANIMATIONS...............Animation keyframe
  * HEADER..................Main header, include logo and navigation bar.
  * HERO....................Hero section
+ * ABOUT...................About section
  * ANIMATIONS..............Animation keyframe
  * MEDIA-QUERIES...........Media queries (842px)
     * MD-HEADER................Main header
+    * MD-ABOUT.................About section
  */
 
 /*---------------------------------*\
@@ -232,7 +234,59 @@ nav {
 }
 
 /*---------------------------------*\
-    $ANIMATIONS
+    $ABOUT
+\*---------------------------------*/
+.about {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    position: relative;
+    flex: 1 1 40rem;
+}
+
+.about-image h5 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    letter-spacing: 2rem;
+    transform: translate(-50%, -20%);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 2 1 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    background: var(--gray-clr);
+}
+
+.about-text div {
+    padding: 3rem 8rem;
+}
+
+.about-text h3 {
+    padding: 2rem 0;
+    font-family: "Ruhl Medium";
+}
+
+.about-text h2 {
+    padding: 4rem;
+    font-family: "Vibes";
+}
+
+/*---------------------------------*\
+$ANIMATIONS
 \*---------------------------------*/
 @keyframes opening {
     from {
@@ -336,5 +390,10 @@ nav {
     .navbar a {
         color: #fff;
         font-size: var(--big-text);
+    }
+
+    /* $MD-ABOUT */
+    .about-text div {
+        padding: 3rem 3rem;
     }
 }
