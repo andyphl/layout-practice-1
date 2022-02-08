@@ -162,6 +162,11 @@ nav {
     right: 0;
 }
 
+.burger,
+.burger-check {
+    display: none;
+}
+
 /*---------------------------------*\
     $HERO
 \*---------------------------------*/
@@ -252,5 +257,83 @@ nav {
     }
     to {
         transform: rotateZ(0);
+    }
+}
+
+/*---------------------------------*\
+    $MEDIA-QUERIES
+\*---------------------------------*/
+@media screen and (max-width: 842px) {
+    /* $MD-HEADER */
+    .main-header {
+        position: relative;
+    }
+
+    .burger {
+        display: block;
+        z-index: 5;
+    }
+
+    .burger span {
+        display: block;
+        padding: 0.2rem 2rem;
+        margin: 0.5rem 0;
+        background: var(--gray-clr);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .burger-check {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translate(5%, -50%);
+        width: 4.5rem;
+        height: 5rem;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 6;
+    }
+
+    .burger-check:checked ~ .burger span:nth-child(1) {
+        transform: rotateZ(45deg) translateY(300%);
+    }
+
+    .burger-check:checked ~ .burger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-check:checked ~ .burger span:nth-child(3) {
+        transform: rotateZ(-45deg) translateY(-300%);
+    }
+
+    .burger-check:checked ~ .burger span {
+        background: #fff;
+    }
+
+    .burger-check:checked + .navbar {
+        transform: translateX(-100%);
+    }
+
+    .navbar {
+        background: linear-gradient(
+            45deg,
+            var(--primary-clr),
+            var(--special-clr)
+        );
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        flex-direction: column;
+        align-items: center;
+        z-index: 3;
+        transition: transform 1s ease;
+    }
+
+    .navbar a {
+        color: #fff;
+        font-size: var(--big-text);
     }
 }
