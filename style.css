@@ -13,8 +13,10 @@
  * HERO....................Hero section
  * ABOUT...................About section
  * GALLERY.................Gallery section
+ * CONTACT.................Contact section
+ * FOOTER..................Footer
  * ANIMATIONS..............Animation keyframe
- * MEDIA-QUERIES...........Media queries (842px)
+ * MEDIA-QUERIES...........Media queries (842px, 1056px, 1700px)
     * MD-HEADER................Main header
     * MD-ABOUT.................About section
     * MD-GALLERY...............Gallery section
@@ -57,7 +59,7 @@ html {
     --header3: calc(3rem + 1vw);
     --header4: calc(2.4rem + 1vw);
     --text: calc(1.5rem + 1vw);
-    --big-text: calc(2.4rem + 1vw);
+    --big-text: calc(6rem + 1vw);
     --primary-clr: #cfb7b7;
     --gray-clr: #525252;
     --special-clr: #906272;
@@ -324,6 +326,81 @@ nav {
 }
 
 /*---------------------------------*\
+    $CONTACT
+\*---------------------------------*/
+.contact {
+    min-height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-wrapper {
+    flex: 3 1 40rem;
+}
+
+.form-wrapper h2 {
+    margin: 5rem 0 3rem;
+}
+
+.form-wrapper span {
+    font-size: var(--big-text);
+    color: var(--special-clr);
+}
+
+.form-wrapper label {
+    display: block;
+}
+
+.form-wrapper input {
+    display: block;
+    margin: 3rem 0;
+    background: var(--primary-clr);
+    color: var(--special-clr);
+    border: none;
+    padding: 1rem;
+}
+
+.form-wrapper button {
+    padding: 1rem 8rem;
+    margin-bottom: 5rem;
+    background-color: var(--special-clr);
+    color: #fff;
+    border: none;
+}
+
+.contact img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex: 1 1 40rem;
+}
+
+/*---------------------------------*\
+    $FOOTER
+\*---------------------------------*/
+footer {
+    background: var(--primary-clr);
+    color: var(--special-clr);
+    min-height: 10vh;
+    padding: 3rem 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+footer h4 {
+    flex: 2 1 40rem;
+    font-size: calc(1.5rem + 1vw);
+}
+
+footer ul {
+    display: flex;
+    flex: 1 1 40rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*---------------------------------*\
 $ANIMATIONS
 \*---------------------------------*/
 @keyframes opening {
@@ -449,5 +526,43 @@ $ANIMATIONS
         top: 0;
         left: 0;
         transform: translate(0, 0);
+    }
+
+    /* MD-CONTACT */
+    footer h4 {
+        order: 2;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    footer ul {
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 1056px) {
+    /* MD-CONTACT */
+    .contact {
+        position: relative;
+        color: #fff;
+    }
+
+    .contact img {
+        position: absolute;
+        filter: brightness(30%);
+        -webkit-filter: brightness(30%);
+
+        z-index: -1;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    html {
+        --header1: 3rem;
+        --header2: 4.5rem;
+        --header3: 3.5rem;
+        --header4: 2.5rem;
+        --text: 2.5rem;
+        --big-text: 6rem;
     }
 }
