@@ -6,10 +6,11 @@
  * RESET...................The css reset defaults.
  * FONT-FACE...............Import font files.
  * GLOBAL-SETTINGS.........Set global variables and settings.
- * HEADER..................Style main header, include logo and navigation bar.
- * HERO....................Style hero section
+ * HEADER..................Main header, include logo and navigation bar.
+ * HERO....................Hero section
  * ANIMATIONS..............Animation keyframe
  * MEDIA-QUERIES...........Media queries (842px)
+    * MD-HEADER................Main header
  */
 
 /*---------------------------------*\
