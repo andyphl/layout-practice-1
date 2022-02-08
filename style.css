@@ -63,6 +63,7 @@ html {
     --primary-clr: #cfb7b7;
     --gray-clr: #525252;
     --special-clr: #906272;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -162,8 +163,7 @@ nav {
     right: 0;
 }
 
-.burger,
-.burger-check {
+.burger {
     display: none;
 }
 
@@ -435,6 +435,8 @@ $ANIMATIONS
 
     .burger {
         display: block;
+        position: relative;
+        cursor: pointer;
         z-index: 5;
     }
 
@@ -446,36 +448,21 @@ $ANIMATIONS
         transition: all 0.5s ease-in-out;
     }
 
-    .burger-check {
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: 5%;
-        transform: translate(5%, -50%);
-        width: 4.5rem;
-        height: 5rem;
-        cursor: pointer;
-        opacity: 0;
-        z-index: 6;
-    }
-
-    .burger-check:checked ~ .burger span:nth-child(1) {
+    .toggle .line1 {
         transform: rotateZ(45deg) translateY(300%);
-    }
-
-    .burger-check:checked ~ .burger span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .burger-check:checked ~ .burger span:nth-child(3) {
-        transform: rotateZ(-45deg) translateY(-300%);
-    }
-
-    .burger-check:checked ~ .burger span {
         background: #fff;
     }
 
-    .burger-check:checked + .navbar {
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotateZ(-45deg) translateY(-300%);
+        background: #fff;
+    }
+
+    .nav-open {
         transform: translateX(-100%);
     }
 
