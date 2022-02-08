@@ -106,15 +106,9 @@ a {
     text-decoration: none;
 }
 
-.d-flex {
+.d-flex-center {
     display: flex;
-}
-
-.flex-col {
     flex-direction: column;
-}
-
-.flex-center {
     justify-content: center;
     align-items: center;
 }
