@@ -8,6 +8,7 @@
  * GLOBAL-SETTINGS.........Set global variables and settings.
  * HEADER..................Style main header, include logo and navigation bar.
  * HERO....................Style hero section
+ * ANIMATIONS...............Animation keyframe
  */
 
 /*---------------------------------*\
@@ -55,6 +56,7 @@ html {
 
 body {
     font-family: "Ruhl", sans-serif;
+    animation: opening 1s ease-in-out;
 }
 
 h1 {
@@ -208,8 +210,42 @@ nav {
     bottom: 0;
     left: -20%;
     z-index: -1;
+    animation: plant-enterence 1.5s ease-in-out 0.5s forwards,
+        plant-shake 2.5s infinite ease-in-out alternate-reverse 2s;
+    transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+    transform-origin: bottom;
 }
 
 .plant2 {
     left: 40%;
+}
+
+/*---------------------------------*\
+    $ANIMATIONS
+\*---------------------------------*/
+@keyframes opening {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: q;
+    }
+}
+
+@keyframes plant-enterence {
+    from {
+        transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+    }
+    to {
+        transform: translateY(0) rotateZ(0) rotateX(0);
+    }
+}
+
+@keyframes plant-shake {
+    from {
+        transform: rotateZ(-5deg);
+    }
+    to {
+        transform: rotateZ(0);
+    }
 }
