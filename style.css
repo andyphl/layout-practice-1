@@ -7,6 +7,7 @@
  * FONT-FACE...............Import font files.
  * GLOBAL-SETTINGS.........Set global variables and settings.
  * HEADER..................Style main header, include logo and navigation bar.
+ * HERO....................Style hero section
  */
 
 /*---------------------------------*\
@@ -103,4 +104,112 @@ a {
 .flex-center {
     justify-content: center;
     align-items: center;
+}
+
+/*---------------------------------*\
+    $HEADER
+\*---------------------------------*/
+.main-header {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+nav {
+    width: 90%;
+    min-height: 10vh;
+    padding: 2rem 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    flex: 1 1 20rem;
+}
+
+.navbar {
+    display: flex;
+    flex: 1 1 20rem;
+    justify-content: space-around;
+}
+
+.navbar li a {
+    position: relative;
+}
+
+.navbar li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    background: #000;
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar li:hover a::before {
+    transform: translateY(0.25rem);
+    left: 0;
+    right: 0;
+}
+
+/*---------------------------------*\
+    $HERO
+\*---------------------------------*/
+.hero {
+    min-height: 90vh;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.hero-intro {
+    flex: 2 1 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-intro h2 {
+    padding: 3rem 0 5rem 0;
+}
+
+.hero-intro p {
+    padding: 0 3rem 5rem;
+}
+
+.hero-intro a {
+    padding: 2rem 8rem;
+    border: 3px solid #000;
+    margin-bottom: 3rem;
+}
+
+.hero-images {
+    flex: 1 1 40rem;
+    background: linear-gradient(#dacdc4, #ffffff);
+    position: relative;
+    z-index: 1;
+}
+
+.hero-elena {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.plant {
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    z-index: -1;
+}
+
+.plant2 {
+    left: 40%;
 }
